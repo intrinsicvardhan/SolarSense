@@ -146,11 +146,19 @@ function searchBox() {
      return area*0.2;
   }
 
-  function calculateCarbonEmisisons() {
-    document.getElementById("reduce").disabled=false; 
-    const lbsToMetricTons = 0.000453592;
-    var emissionSavedLbs = areaTosolarPanelProduction()*1900; 
-    document.getElementById("reduce").value = emissionSavedLbs*100; 
+  // function calculateCarbonEmisisons() {
+  //   document.getElementById("reduce").disabled=false; 
+  //   const lbsToMetricTons = 0.000453592;
+  //   var emissionSavedLbs = areaTosolarPanelProduction()*1900; 
+  //   document.getElementById("reduce").value = emissionSavedLbs*100; 
+  // }
+
+  function calculateCarbonEmisisonsReduction() {
+    document.getElementById('reduce').disabled =false;
+    var area = document.getElementById('getarea').value; 
+    var solarPanelProduction = area*0.001; 
+    var calculateCarbonEmisisonsReduction = solarPanelProduction*0.95; 
+    document.getElementById('reduce') = calculateCarbonEmisisonsReduction; 
   }
 
   // function calculateEquivalentArea(solarPanelCapacity, solarInsolation, solarPanelEfficiency) {
